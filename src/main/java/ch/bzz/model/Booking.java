@@ -1,24 +1,28 @@
 package ch.bzz.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.ToString;
+import lombok.EqualsAndHashCode;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.math.BigDecimal;
 
-/**
- * Booking entity
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Booking {
-    private Long id;
+    private String id;
+    private String bookingNumber;
     private LocalDate date;
     private String text;
     private Account debitAccount;
     private Account creditAccount;
     private BigDecimal amount;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Project project;
 }

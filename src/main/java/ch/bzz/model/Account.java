@@ -1,18 +1,21 @@
 package ch.bzz.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.ToString;
+import lombok.EqualsAndHashCode;
 
-/**
- * Account entity
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Account {
-    private Long id;
+    private String id;
     private String accountNumber;
     private String name;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Project project;
 }
